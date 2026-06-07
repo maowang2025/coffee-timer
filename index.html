@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡计时器 - Coffee Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ 咖啡计时器</h1>
+            <p class="subtitle">Coffee Timer</p>
+        </header>
+
+        <main>
+            <div class="timer-display">
+                <div class="time" id="timeDisplay">00:00</div>
+                <div class="mode-label" id="modeLabel">选择冲泡方式</div>
+            </div>
+
+            <div class="presets">
+                <h2>冲泡方式</h2>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-time="120" data-name="快速冲泡">⚡ 快速冲泡<br><small>2分钟</small></button>
+                    <button class="preset-btn" data-time="240" data-name="标准冲泡">📋 标准冲泡<br><small>4分钟</small></button>
+                    <button class="preset-btn" data-time="300" data-name="法式压壶">🫖 法式压壶<br><small>5分钟</small></button>
+                    <button class="preset-btn" data-time="360" data-name="冷萃咖啡">❄️ 冷萃咖啡<br><small>6分钟</small></button>
+                </div>
+            </div>
+
+            <div class="custom-time">
+                <h2>自定义时间</h2>
+                <div class="input-group">
+                    <label for="minutes">分钟:</label>
+                    <input type="number" id="minutes" min="0" max="59" value="0">
+                    <label for="seconds">秒:</label>
+                    <input type="number" id="seconds" min="0" max="59" value="0">
+                    <button class="btn-set" onclick="setCustomTime()">设置</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-start" id="startBtn" onclick="startTimer()">开始</button>
+                <button class="btn btn-pause" id="pauseBtn" onclick="pauseTimer()" disabled>暂停</button>
+                <button class="btn btn-reset" id="resetBtn" onclick="resetTimer()">重置</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="info">
+                <p>💡 <strong>冲泡小贴士：</strong></p>
+                <ul>
+                    <li>水温：88-92°C 最佳</li>
+                    <li>咖啡豆研磨粗度很重要</li>
+                    <li>新鲜豆子质量更好</li>
+                    <li>计时器完成后会有声音提醒</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for coffee lovers | 2026</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
